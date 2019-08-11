@@ -59,21 +59,21 @@ class Battle(object):
         self.damagecalc = DamageCalc()
 
     def __call__(self, atk, _def):
-        damage = self.damage(atk, _def)
+        damage, hit = self.damage(atk, _def)
         remaining_def_HP = _def["HP"] - damage if _def["HP"] > damage else 0
 
         if _def["counter"]:
-            counter_damage = self.damage(_def, atk)
+            counter_damage, counter_hit = self.damage(_def, atk)
             remaining_atk_HP = atk["HP"] - counter_damage if atk["HP"] > counter_damage else 0
-            return (remaining_atk_HP, remaining_def_HP)
+            return {"atk_hp": remaining_atk_HP, "def_hp": remaining_def_HP, "atk_hit": hit, "def_hit": counter_hit}
 
-        return (0, remaining_def_HP)
+        return {"atk_hp": atk["HP"], "def_hp": remaining_def_HP, "atk_hit": hit, "def_hit": "-"}
 
     def damage(self, atk, _def):
         prob = random.randint(0, 100)
-        result = self.damagecalc(atk, _def) if prob <= self.hitcalc(atk, _def) else 0
-        print(prob)
-        return result
+        hit = self.hitcalc(atk, _def)
+        result_damage = self.damagecalc(atk, _def) if prob <= hit else 0
+        return result_damage, hit
 
 if __name__ == '__main__':
     atk = {"hit": 400, "avoid": 300, "geo": 1.1, "map_geo": 1.1,

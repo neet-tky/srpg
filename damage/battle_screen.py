@@ -78,14 +78,20 @@ class DisplayWindow(object):
 
     def _finishevents(self, event):
         if event.type == QUIT:
-            self.running = False
-            pygame.quit()
-            sys.exit()
+            self._finish()
+
+    def _finish(self):
+        self.running = False
+        pygame.quit()
+        sys.exit()
 
     def _clickevents(self, event):
         if event.type == pygame.MOUSEBUTTONDOWN:
             if self.attack_start.collidepoint(event.pos):
                 print("attack_start was pressed")
+                print(self.damage["atk_hp"], self.damage["def_hp"])
+                self._finish()
+
             if self.command_mind.collidepoint(event.pos):
                 print("command_of_mind was pressed")
 
@@ -99,7 +105,7 @@ if __name__ == '__main__':
            "counter": False
            }
 
-    _def = {"name":"name", "hit": 400, "avoid": 300, "geo": 1.1, "map_geo": 1.1,
+    _def = {"name":"name", "hit": 300, "avoid": 300, "geo": 1.1, "map_geo": 1.1,
             "HP": 4500, "EN": 200, "ARMOR": 1450, "MOBILE": 120,
             "weapon":"w_name", "w_atk": 3500, "w_hit": 30, "w_geo": 1.0,
             "counter": True

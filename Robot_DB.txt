@@ -1,0 +1,19 @@
+{
+
+"thi":{
+"basis": {"name": "thi", "move": 6,
+          "geo": {"space":["A", "True"], "sky":["A", "False"], "ground":["A", "True"], "sea":["A", "False"]}, "size":"M"},
+"spec": {"option_n": 2, "HP": 5100, "EN": 250, "ARMOR": 1450, "MOBILE": 130},
+"weapon": {"beam": {"attack": 3200, "lange": [1, 2, 3], "EN": 10},
+           "MLauncher": {"attack": 3700, "lange": [1, 2, 3], "EN": 10},
+           "Mbeam": {"attack": 4600, "lange": [2, 3, 4, 5, 6, 7, 8], "EN": 30}}},
+
+"thi2":{
+"basis": {"name": "thi", "move": 6,
+          "geo": {"space":["A", "True"], "sky":["A", "False"], "ground":["A", "True"], "sea":["A", "False"]}, "size":"M"},
+"spec": {"option_n": 2, "HP": 5100, "EN": 250, "ARMOR": 1450, "MOBILE": 130},
+"weapon": {"beam": {"attack": 3200, "lange": [1, 2, 3], "EN": 10},
+           "MLauncher": {"attack": 3700, "lange": [1, 2, 3], "EN": 10},
+           "Mbeam": {"attack": 4600, "lange": [2, 3, 4, 5, 6, 7, 8], "EN": 30}}}
+}
+

@@ -29,6 +29,8 @@ img_DB = {
     "select": "figure/select.png"
 }
 
+BLACK = (0, 0, 0)
+
 class RobotLocate(object):
     def __init__(self, img_DB, screen):
         self.own_db = loads_imgs(img_DB["own"])
@@ -78,6 +80,23 @@ class MAP(object):
             for x in range(self.col):
                 self.screen.blit(self.map_db[str(self.map[y][x])], (x * self.msize, y * self.msize))
 
+class ActionSelect(object):
+    def __init__(self, screen):
+        self.screen = screen
+        self.font = pygame.font.SysFont(None, 20)
+
+        self.actionbutton = action_list()
+        self.actionbutton["X"] = Rect(750, 50, 20, 20)
+
+    def __call__(self, *args, **kwargs):
+        self.disp_text()
+        return self.actionbutton
+
+    def disp_text(self):
+        for key, action in self.actionbutton.items():
+            pygame.draw.rect(self.screen, BLACK, action, 2)
+            self.screen.blit(self.font.render(key, True, BLACK), (action[0] + 5, action[1] + 5))
+
 class DisplayMAP(object):
     SIZE = (800, 600)
 
@@ -87,18 +106,21 @@ class DisplayMAP(object):
 
         self.map = MAP(mapdb, imgdb, self.screen)
         self.robot_locate = RobotLocate(imgdb, self.screen)
-        self.action_select = ActionSelect()
+        self.action_select = ActionSelect(self.screen)
         self.running = True
-
+        self.action_flag = False
         self.locate = {}
+
+        self.actionbutton = {}
 
     def __call__(self, *args, **kwargs):
         self.map()
         self.locate = self.robot_locate()
         print(self.locate)
         while self.running:
-            self.drawupdate()
             self.events()
+            self.checkflag()
+            self.drawupdate()
 
     def drawupdate(self):
         pygame.display.update()
@@ -118,8 +140,18 @@ class DisplayMAP(object):
         if event.type == pygame.MOUSEBUTTONDOWN:
             for key, own_locate in self.locate["own"].items():
                 if own_locate.collidepoint(event.pos):
-                    print("own robot was pressed")
+                    self.action_flag = True
+                    self.actionbutton = self.action_select()
 
+            if self.action_flag:
+
+                for key, action in self.actionbutton.items():
+                    if action.collidepoint(event.pos):
+                        print("return button was pressed") if key == "return" else print( key + " was pressed")
+
+
+    def checkflag(self):
+        pass
 
 def load_img(file, size=(32, 32)):
     img = pygame.image.load(file).convert_alpha()
@@ -133,6 +165,12 @@ def loads_imgs(names, size=(32, 32)):
         imgs[k] = load_img(v, size)
 
     return imgs
+
+def action_list(action_command = {"move": 0, "battle": 0, "mind": 0, "end": 0}):
+    for num, (key, action) in enumerate(action_command.items()):
+        action_command[key] = Rect(670, 80 + num * 25, 100, 20)
+
+    return action_command
 
 if __name__=="__main__":
     maps = DisplayMAP(mapDB["part1"], img_DB)

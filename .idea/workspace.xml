@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2bf2407b-cebc-4c35-8b29-f9ac4870b9f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/map/battle_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/map/battle_map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/grass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/water.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,27 +11,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DockManager">
-    <window id="1">
+    <window id="2">
       <content type="file-editors">
         <state>
           <leaf>
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/damage/battle_screen.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="247">
-                    <caret line="79" column="9" lean-forward="true" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
-                    <folding>
-                      <element signature="e#0#13#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/sample/sample.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="39">
-                    <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+                  <state relative-caret-position="-224">
+                    <caret line="18" column="17" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="17" />
                     <folding>
                       <element signature="e#0#13#0" expanded="true" />
                     </folding>
@@ -72,8 +58,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/map/battle_map.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="89" column="13" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
+            <state relative-caret-position="294">
+              <caret line="145" column="32" lean-forward="true" selection-start-line="145" selection-start-column="32" selection-end-line="145" selection-end-column="32" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -100,6 +86,11 @@
       <find>msize</find>
       <find>screen</find>
       <find>init</find>
+      <find>drawinit</find>
+      <find>font</find>
+      <find>self.</find>
+      <find>self.actionbu</find>
+      <find>return</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -418,13 +409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DB/txtfiles/map.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="20" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/damage/battle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -447,18 +431,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/damage/battle_screen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="79" column="9" lean-forward="true" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
+        <state relative-caret-position="-224">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="17" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DB/txtfiles/map.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="20" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/map/battle_map.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="89" column="13" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
+        <state relative-caret-position="294">
+          <caret line="145" column="32" lean-forward="true" selection-start-line="145" selection-start-column="32" selection-end-line="145" selection-end-column="32" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
